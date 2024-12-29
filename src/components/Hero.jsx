@@ -1,14 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { StoreContext } from '../Context/StoreContext.jsx';
 import DisplayItem from './DisplayItem';
-import { FaFilter } from 'react-icons/fa'; // Import filter icon
+import { FaFilter } from 'react-icons/fa';
 
 const Hero = () => {
   const { products, cartItems, addToCart, removeFromCart } = useContext(StoreContext);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [sortOption, setSortOption] = useState('');
-  const [showFilters, setShowFilters] = useState(false); // State to toggle filter options visibility
+  const [showFilters, setShowFilters] = useState(false); 
 
   const filteredProducts = products.filter((product) => {
     const matchesSearch = product.title.toLowerCase().includes(searchQuery.toLowerCase());
@@ -17,16 +17,16 @@ const Hero = () => {
     return matchesSearch && matchesCategory;
   });
 
-  // Sorting function based on selected option
+  //sorting function based on selected option
   const sortedProducts = filteredProducts.sort((a, b) => {
     if (sortOption === 'price-low-high') {
-      return a.price - b.price; // Sort by price (low to high)
+      return a.price - b.price; 
     } else if (sortOption === 'price-high-low') {
-      return b.price - a.price; // Sort by price (high to low)
+      return b.price - a.price;
     } else if (sortOption === 'rating-high-low') {
-      return b.rating - a.rating; // Sort by rating (high to low)
+      return b.rating - a.rating; 
     }
-    return 0; // Default if no sorting is applied
+    return 0; //default
   });
 
   return (
@@ -40,7 +40,7 @@ const Hero = () => {
           className="px-4 py-2 w-80 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
         
-        {/* Filter Icon to Toggle the Filters */}
+        
         <button
           onClick={() => setShowFilters(!showFilters)}
           className="p-3 bg-blue-500 rounded-full text-white shadow-lg hover:bg-blue-600 transition-colors"
@@ -49,7 +49,7 @@ const Hero = () => {
         </button>
       </div>
 
-      {/* Filter options that toggle visibility */}
+      
       <div
         className={`absolute top-20 left-1/2 transform -translate-x-1/2 bg-white p-6 rounded-lg shadow-lg transition-all duration-300 ease-in-out ${
           showFilters ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
