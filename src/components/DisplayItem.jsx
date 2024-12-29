@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import add_icon_green from '../assets/add_icon_green.png';
 import remove_icon_red from '../assets/remove_icon_red.png';
 
@@ -41,7 +42,6 @@ const DisplayItem = ({
           </button>
         ) : (
           <div className="food-item-counter flex justify-evenly items-center">
-            
             <img
               onClick={(e) => {
                 e.preventDefault();
@@ -68,6 +68,11 @@ const DisplayItem = ({
           </div>
         )}
       </div>
+
+      {/* View Details button */}
+      <Link to={`/product/${id}`} className="mt-4 w-full px-6 py-2 bg-green-500 text-white rounded-lg text-center hover:bg-green-600 transition-colors">
+        View Details
+      </Link>
     </div>
   );
 };
