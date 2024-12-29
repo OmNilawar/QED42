@@ -9,11 +9,11 @@ import { useNavigate } from 'react-router-dom';
 export const PraticularItem = () => {
   const { id } = useParams(); 
   const { BaseURL, addToCart, removeFromCart, cartItems } = useContext(StoreContext); 
-  const [product, setProduct] = useState(null); //particular product after fetch
-  const [loading, setLoading] = useState(true); //loading state
-  const [error, setError] = useState(null); //error 
-  const [showAllReviews, setShowAllReviews] = useState(false); //bool to show all reviews
-  const [currentImage, setCurrentImage] = useState(''); //to set the current image
+  const [product, setProduct] = useState(null); // particular product after fetch
+  const [loading, setLoading] = useState(true); // loading state
+  const [error, setError] = useState(null); // error 
+  const [showAllReviews, setShowAllReviews] = useState(false); // bool to show all reviews
+  const [currentImage, setCurrentImage] = useState(''); // to set the current image
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -86,10 +86,11 @@ export const PraticularItem = () => {
             </p>
 
             {/* cart functionality */}
-            <div className="mt-6">
+            <div className="mt-6 flex justify-between gap-2">
+              {/* Add to Cart button */}
               {!cartCount ? (
                 <button
-                  className="w-full px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                  className="w-[50%] px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
                   onClick={(e) => {
                     e.preventDefault();
                     addToCart(id);
@@ -98,7 +99,7 @@ export const PraticularItem = () => {
                   Add to Cart
                 </button>
               ) : (
-                <div className="food-item-counter flex justify-evenly items-center">
+                <div className="w-[50%] p-2 bg-gray-300 rounded-xl flex justify-between items-center">
                   <img
                     onClick={(e) => {
                       e.preventDefault();
@@ -124,11 +125,22 @@ export const PraticularItem = () => {
                   />
                 </div>
               )}
+
+              {/* Buy Now button */}
+              <button
+                className="w-[50%] px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  addToCart(id); // Add item to cart first
+                  navigate('/cart'); // Navigate to the cart page
+                }}
+              >
+                Buy Now
+              </button>
             </div>
           </div>
         </div>
 
-        
         <div className="mt-6">
           <h2 className="text-xl font-bold mb-4">Product Details</h2>
           <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
@@ -161,10 +173,7 @@ export const PraticularItem = () => {
         <div className="mt-6">
           <h2 className="text-xl font-bold mb-4">Customer Reviews</h2>
           <div className="space-y-4">
-            
-            <div
-              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300"
-            >
+            <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
               <div className="flex justify-between items-center mb-4">
                 <p className="font-semibold text-lg">{product.reviews[0].reviewerName}</p>
                 <p className="text-sm text-gray-500">{product.reviews[0].date}</p>
@@ -182,7 +191,6 @@ export const PraticularItem = () => {
               <p className="text-gray-600">{product.reviews[0].comment}</p>
             </div>
 
-            
             {!showAllReviews && product.reviews.length > 1 && (
               <button
                 className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
@@ -194,10 +202,7 @@ export const PraticularItem = () => {
 
             {/* Show all reviews when the button is clicked */}
             {showAllReviews && product.reviews.slice(1).map((review, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300"
-              >
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
                 <div className="flex justify-between items-center mb-4">
                   <p className="font-semibold text-lg">{review.reviewerName}</p>
                   <p className="text-sm text-gray-500">{review.date}</p>

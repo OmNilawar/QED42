@@ -14,21 +14,21 @@ const DisplayItem = ({
   removeFromCart 
 }) => {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-lg w-60 flex flex-col">
+    <Link to={`/product/${id}`} className="bg-white p-6 rounded-xl shadow-lg w-60 flex flex-col hover:shadow-2xl transition-all duration-300 ease-in-out">
       {/* Image of the product */}
       <img
         src={image}
         alt={title}
         className="h-24 w-24 object-contain mx-auto"
       />
-      {/* here we will see the title */}
+      {/* Title of the product */}
       <h3 className="text-lg font-semibold mt-4 text-center">{title}</h3>
 
-      {/* price of the product and category */}
+      {/* Price of the product and category */}
       <p className="text-gray-600 text-center mt-2">${price}</p>
       <p className="text-gray-600 text-center mt-2">{category}</p>
 
-      {/* cart functionality */}
+      {/* Cart functionality */}
       <div className="mt-auto">
         {!cartCount ? (
           <button
@@ -68,12 +68,7 @@ const DisplayItem = ({
           </div>
         )}
       </div>
-
-      {/* View Details button */}
-      <Link to={`/product/${id}`} className="mt-4 w-full px-6 py-2 bg-green-500 text-white rounded-lg text-center hover:bg-green-600 transition-colors">
-        View Details
-      </Link>
-    </div>
+    </Link>
   );
 };
 
