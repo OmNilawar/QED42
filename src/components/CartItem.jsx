@@ -82,7 +82,7 @@ const CartItem = () => {
           </button>
         </div>
 
-        <div className="cart-promocode flex-1">
+        <div className="flex-1">
           <h2 className="text-xl font-bold text-gray-800">Promo Code</h2>
           <p className="text-gray-600 mb-2">Submit your promo code</p>
           <div className="promo-code-details flex justify-between items-center bg-gray-200 rounded-md p-2">
@@ -96,7 +96,10 @@ const CartItem = () => {
             </button>
           </div>
         </div>
+        
       </div>
+
+      <button onClick={() => navigate('/placeOrder')}>CheckOut</button>
     </div>
   );
 };
