@@ -13,7 +13,7 @@ export const Navbar = () => {
         <div className="space-x-6 hidden md:flex">
           <Link to="/" className="text-white hover:text-gray-300">Home</Link>
           <Link to="/cart" className="text-white hover:text-gray-300">Cart</Link>
-          <Link to="/shop" className="text-white hover:text-gray-300">Shop</Link>
+          <Link to="/orders" className="text-white hover:text-gray-300">Orders</Link>
           <Link to="/contact" className="text-white hover:text-gray-300">Contact</Link>
         </div>
 

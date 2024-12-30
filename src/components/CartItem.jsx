@@ -99,7 +99,7 @@ const CartItem = () => {
         
       </div>
 
-      <button onClick={() => navigate('/placeOrder')}>CheckOut</button>
+      <button className='p-4 bg-gray-400 rounded-xl text-l font-semibold' onClick={() => navigate('/placeOrder')}>CheckOut</button>
     </div>
   );
 };

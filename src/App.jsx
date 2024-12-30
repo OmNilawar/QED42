@@ -3,6 +3,7 @@ import { Home } from "./pages/Home.jsx";
 import { Cart } from './pages/Cart.jsx'
 import { DetailedInfo } from "./pages/DetailedInfo.jsx";
 import PlaceOrder from "./pages/PlaceOrder.jsx";
+import { Orders } from "./pages/Orders.jsx";
 function App() {
 
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/product/:id" element={<DetailedInfo />} />
           <Route path="/placeOrder" element={<PlaceOrder />} />
+          <Route path="/orders" element={<Orders />} />
         </Routes>
       </Router>
     </>
