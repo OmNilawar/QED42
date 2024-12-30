@@ -31,18 +31,15 @@ The application supports the following features:
 To get started with the project locally, follow these steps:
 
 1. **Clone the repository**:
-
    ```bash
    git clone https://github.com/OmNilawar/QED42.git
    cd QED42
    ```
-2. Install dependencies:
-
-Make sure you have Node.js installed. Then, run the following command:
+2. **Install dependencies**:
    ```bash
    npm install
    ```
-3. Run the development server:
+3. **Run the development server**:
    ```bash
    npm run dev
    ```
