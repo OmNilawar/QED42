@@ -59,98 +59,100 @@ const PlaceOrder = () => {
           className="flex flex-col md:flex-row justify-between gap-12 w-full max-w-6xl"
         >
           {/* Left Section */}
-          <div className="w-[50%] md:max-w-[50%] lg:max-w-[500px] ml-3">
+          <div className="w-full md:w-[50%] lg:max-w-[500px] ml-3">
             <p className="text-2xl font-semibold mb-8">Delivery Details</p>
-            <div className="flex gap-4 mb-4">
+            <div className="flex flex-col gap-4 mb-4">
+              <div className="flex gap-4 mb-4">
+                <input
+                  type="text"
+                  name="firstName"
+                  value={deliveryDetails.firstName}
+                  onChange={handleChange}
+                  placeholder="First Name"
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                />
+                <input
+                  type="text"
+                  name="lastName"
+                  value={deliveryDetails.lastName}
+                  onChange={handleChange}
+                  placeholder="Last Name"
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                />
+              </div>
               <input
-                type="text"
-                name="firstName"
-                value={deliveryDetails.firstName}
+                type="email"
+                name="email"
+                value={deliveryDetails.email}
                 onChange={handleChange}
-                placeholder="First Name"
-                className="w-full p-2 border border-gray-300 rounded-md"
+                placeholder="Email"
+                className="w-full p-2 border border-gray-300 rounded-md mb-4"
               />
               <input
                 type="text"
-                name="lastName"
-                value={deliveryDetails.lastName}
+                name="street"
+                value={deliveryDetails.street}
                 onChange={handleChange}
-                placeholder="Last Name"
-                className="w-full p-2 border border-gray-300 rounded-md"
+                placeholder="Street"
+                className="w-full p-2 border border-gray-300 rounded-md mb-4"
+              />
+              <input
+                type="text"
+                name="landmark"
+                value={deliveryDetails.landmark}
+                onChange={handleChange}
+                placeholder="(Landmark)"
+                className="w-full p-2 border border-gray-300 rounded-md mb-4"
+              />
+              <div className="flex gap-4 mb-4">
+                <input
+                  type="text"
+                  name="city"
+                  value={deliveryDetails.city}
+                  onChange={handleChange}
+                  placeholder="City"
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                />
+                <input
+                  type="text"
+                  name="state"
+                  value={deliveryDetails.state}
+                  onChange={handleChange}
+                  placeholder="State"
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                />
+              </div>
+              <div className="flex gap-4 mb-4">
+                <input
+                  type="text"
+                  name="zipCode"
+                  value={deliveryDetails.zipCode}
+                  onChange={handleChange}
+                  placeholder="Zip-Code"
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                />
+                <input
+                  type="text"
+                  name="country"
+                  value={deliveryDetails.country}
+                  onChange={handleChange}
+                  placeholder="Country"
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                />
+              </div>
+              <input
+                type="text"
+                name="phone"
+                value={deliveryDetails.phone}
+                onChange={handleChange}
+                placeholder="Phone"
+                className="w-full p-2 border border-gray-300 rounded-md mb-4"
               />
             </div>
-            <input
-              type="email"
-              name="email"
-              value={deliveryDetails.email}
-              onChange={handleChange}
-              placeholder="Email"
-              className="w-full p-2 border border-gray-300 rounded-md mb-4"
-            />
-            <input
-              type="text"
-              name="street"
-              value={deliveryDetails.street}
-              onChange={handleChange}
-              placeholder="Street"
-              className="w-full p-2 border border-gray-300 rounded-md mb-4"
-            />
-            <input
-              type="text"
-              name="landmark"
-              value={deliveryDetails.landmark}
-              onChange={handleChange}
-              placeholder="(Landmark)"
-              className="w-full p-2 border border-gray-300 rounded-md mb-4"
-            />
-            <div className="flex gap-4 mb-4">
-              <input
-                type="text"
-                name="city"
-                value={deliveryDetails.city}
-                onChange={handleChange}
-                placeholder="City"
-                className="w-full p-2 border border-gray-300 rounded-md"
-              />
-              <input
-                type="text"
-                name="state"
-                value={deliveryDetails.state}
-                onChange={handleChange}
-                placeholder="State"
-                className="w-full p-2 border border-gray-300 rounded-md"
-              />
-            </div>
-            <div className="flex gap-4 mb-4">
-              <input
-                type="text"
-                name="zipCode"
-                value={deliveryDetails.zipCode}
-                onChange={handleChange}
-                placeholder="Zip-Code"
-                className="w-full p-2 border border-gray-300 rounded-md"
-              />
-              <input
-                type="text"
-                name="country"
-                value={deliveryDetails.country}
-                onChange={handleChange}
-                placeholder="Country"
-                className="w-full p-2 border border-gray-300 rounded-md"
-              />
-            </div>
-            <input
-              type="text"
-              name="phone"
-              value={deliveryDetails.phone}
-              onChange={handleChange}
-              placeholder="Phone"
-              className="w-full p-2 border border-gray-300 rounded-md mb-4"
-            />
           </div>
 
           {/* Right Section */}
-          <div className="w-[50%] md:min-w-[40%] mt-14">
+          <div className="w-full md:w-[40%] mt-14">
             <div className="p-6 bg-gray-100 rounded-lg shadow-md">
               <h2 className="text-xl font-semibold mb-4">Cart Total</h2>
               <div>
