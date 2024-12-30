@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext} from 'react';
 import { Navbar } from '../components/Navbar';
 import { StoreContext } from '../Context/StoreContext';
+import Footer from '../components/Footer';
 
 export const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -41,6 +42,7 @@ export const Orders = () => {
           </div>
         )}
       </div>
+      <Footer />
     </>
   );
 };

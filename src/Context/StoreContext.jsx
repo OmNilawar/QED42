@@ -91,6 +91,9 @@ const StoreContextProvider = (props) => {
         return 2;
   }
 
+  const getCartItemCount = () => {
+    return Object.values(cartItems).length;
+  };
 
   const contextValue = {
     products,
@@ -101,7 +104,8 @@ const StoreContextProvider = (props) => {
     addToCart,
     removeFromCart,
     getTotalCartAmount,
-    getDeliveryFee
+    getDeliveryFee,
+    getCartItemCount
   };
 
   return (

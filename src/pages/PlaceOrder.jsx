@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { StoreContext } from '../Context/StoreContext';
 import { Navbar } from '../components/Navbar';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 const PlaceOrder = () => {
   const { getTotalCartAmount, getDeliveryFee, setCartItems, cartItems } = useContext(StoreContext);
@@ -178,6 +179,7 @@ const PlaceOrder = () => {
           </div>
         </form>
       </div>
+      <Footer />
     </>
   );
 };
