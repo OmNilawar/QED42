@@ -4,27 +4,19 @@
 
 This is a simple E-commerce Cart application built using React, Tailwind CSS, and Context API. The application allows users to view products, add them to the cart, and see the total price of the cart with delivery charges.
 
-The application supports the following features:
-
-- Display a list of products fetched from an API.
-- Add and remove items from the shopping cart.
-- Show the total amount of the cart and delivery fees.
-- Display a red dot on the Cart icon if there are items in the cart.
-
 ## Features
 
-- **Responsive Design**: The application is fully responsive, providing a seamless experience on both desktop and mobile devices.
-- **Cart Management**: Users can add or remove products from the cart, and the cart state is managed globally using React's Context API.
-- **Product Details**: Users can view the products fetched from an external API and their details, including price.
-- **Cart Indicator**: A red dot appears on the cart icon when items are present in the cart.
-- **Total Cart Amount & Delivery Fee**: The total amount of the cart is calculated dynamically, and a delivery fee is applied based on the total value of the cart.
+- Display products fetched from an API.
+- Add/remove items from the cart.
+- Show total cart amount and delivery fees.
+- Red dot on the Cart icon when items are added.
 
 ## Technologies Used
 
-- **React**: For building the UI components and managing state.
-- **Tailwind CSS**: For styling the application with a utility-first CSS framework.
-- **React Context API**: For managing the global state of the application, particularly the cart items.
-- **Axios**: For making HTTP requests to fetch product data from an external API.
+- **React**: For building UI components and managing state.
+- **Tailwind CSS**: For styling the application.
+- **React Context API**: For global state management (cart).
+- **Axios**: For fetching data from an external API.
 
 ## Installation
 
