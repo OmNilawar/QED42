@@ -44,10 +44,11 @@ export const PraticularItem = () => {
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
       <FaRegArrowAltCircleLeft className='w-10 h-10 cursor-pointer' onClick={() => navigate('/')}/>
+
       <div className="max-w-5xl mx-auto bg-white p-6 rounded-xl shadow-lg">
         {/* product images */}
-        <div className="flex items-center justify-between gap-6">
-          <div className="w-1/2">
+        <div className="flex flex-col sm:flex-row sm:gap-6 sm:items-center">
+          <div className="w-full sm:w-1/2 mb-4 sm:mb-0">
             <img
               src={currentImage}
               alt={product.title}
@@ -67,7 +68,7 @@ export const PraticularItem = () => {
           </div>
 
           {/* product overview */}
-          <div className="w-1/2">
+          <div className="w-full sm:w-1/2">
             <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
             <p className="text-gray-700 mb-4">{product.description}</p>
             <p className="text-lg font-semibold text-green-600 mb-2">
@@ -86,10 +87,10 @@ export const PraticularItem = () => {
             </p>
 
             {/* cart functionality */}
-            <div className="mt-6 flex justify-between gap-2">
+            <div className="mt-6 flex flex-col sm:flex-row gap-4">
               {!cartCount ? (
                 <button
-                  className="w-[50%] px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                  className="w-full sm:w-[50%] px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
                   onClick={(e) => {
                     e.preventDefault();
                     addToCart(id);
@@ -98,7 +99,7 @@ export const PraticularItem = () => {
                   Add to Cart
                 </button>
               ) : (
-                <div className="w-[50%] p-2 bg-gray-300 rounded-xl flex justify-between items-center">
+                <div className="w-full sm:w-[50%] p-2 bg-gray-300 rounded-xl flex justify-between items-center">
                   <img
                     onClick={(e) => {
                       e.preventDefault();
@@ -108,11 +109,7 @@ export const PraticularItem = () => {
                     alt="Remove"
                     className="cursor-pointer h-6 w-6"
                   />
-
-                  <span className="px-4 text-center text-lg font-medium">
-                    {cartCount}
-                  </span>
-
+                  <span className="px-4 text-center text-lg font-medium">{cartCount}</span>
                   <img
                     onClick={(e) => {
                       e.preventDefault();
@@ -127,7 +124,7 @@ export const PraticularItem = () => {
 
               {/* Buy Now button */}
               <button
-                className="w-[50%] px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                className="w-full sm:w-[50%] px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
                 onClick={(e) => {
                   e.preventDefault();
                   addToCart(id); // Add item to cart first
@@ -199,7 +196,6 @@ export const PraticularItem = () => {
               </button>
             )}
 
-            
             {showAllReviews && product.reviews.slice(1).map((review, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
                 <div className="flex justify-between items-center mb-4">
@@ -220,16 +216,6 @@ export const PraticularItem = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* QR Code */}
-        <div className="mt-6 text-center">
-          <h2 className="text-xl font-bold mb-2">QR Code</h2>
-          <img
-            src={product.meta.qrCode}
-            alt="QR Code"
-            className="mx-auto h-32 w-32 object-contain"
-          />
         </div>
       </div>
     </div>
