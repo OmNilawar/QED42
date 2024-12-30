@@ -18,6 +18,9 @@ This is a simple E-commerce Cart application built using React, Tailwind CSS, an
 - **React Context API**: For global state management (cart).
 - **Axios**: For fetching data from an external API.
 
+## Live Demo
+Check out the live demo of the project [here](https://ecommerce-git-main-omkars-projects-791b9411.vercel.app/).
+
 ## Installation
 
 To get started with the project locally, follow these steps:
