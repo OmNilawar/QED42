@@ -1,21 +1,21 @@
-import React, { useEffect, useState, useContext} from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Navbar } from '../components/Navbar';
 import { StoreContext } from '../Context/StoreContext';
 import Footer from '../components/Footer';
 
 export const Orders = () => {
   const [orders, setOrders] = useState([]);
-  const {products} = useContext(StoreContext);
+  const { products } = useContext(StoreContext);
 
   useEffect(() => {
     const storedOrders = JSON.parse(localStorage.getItem('orders')) || [];
     setOrders(storedOrders);
-  }, []);//to fetch only once the dependency array is kept empty
+  }, []); // to fetch only once, the dependency array is kept empty
 
   return (
     <>
       <Navbar />
-      <div className="container mx-auto mt-12 px-4">
+      <div className="container mx-auto mt-12 px-4 min-h-screen">
         <h1 className="text-2xl font-bold mb-6">Your Orders</h1>
         {orders.length === 0 ? (
           <p className="text-gray-600">No orders placed yet.</p>
