@@ -59,7 +59,7 @@ const PlaceOrder = () => {
           className="flex flex-col md:flex-row justify-between gap-12 w-full max-w-6xl"
         >
           {/* Left Section */}
-          <div className="w-full md:max-w-[30%] lg:max-w-[500px]">
+          <div className="w-[50%] md:max-w-[50%] lg:max-w-[500px] ml-3">
             <p className="text-2xl font-semibold mb-8">Delivery Details</p>
             <div className="flex gap-4 mb-4">
               <input
@@ -150,7 +150,7 @@ const PlaceOrder = () => {
           </div>
 
           {/* Right Section */}
-          <div className="w-full md:min-w-[40%] mt-14">
+          <div className="w-[50%] md:min-w-[40%] mt-14">
             <div className="p-6 bg-gray-100 rounded-lg shadow-md">
               <h2 className="text-xl font-semibold mb-4">Cart Total</h2>
               <div>

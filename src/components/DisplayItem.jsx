@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom'; 
 import add_icon_green from '../assets/add_icon_green.png';
 import remove_icon_red from '../assets/remove_icon_red.png';
 
@@ -15,20 +15,20 @@ const DisplayItem = ({
 }) => {
   return (
     <Link to={`/product/${id}`} className="bg-white p-6 rounded-xl shadow-lg w-60 flex flex-col hover:shadow-2xl transition-all duration-300 ease-in-out">
-      {/* Image of the product */}
+      {/*image*/}
       <img
         src={image}
         alt={title}
         className="h-24 w-24 object-contain mx-auto"
       />
-      {/* Title of the product */}
+      {/*title*/}
       <h3 className="text-lg font-semibold mt-4 text-center">{title}</h3>
 
-      {/* Price of the product and category */}
+      {/*product chi price*/}
       <p className="text-gray-600 text-center mt-2">${price}</p>
       <p className="text-gray-600 text-center mt-2">{category}</p>
 
-      {/* Cart functionality */}
+      {/*cart chi functionality */}
       <div className="mt-auto">
         {!cartCount ? (
           <button

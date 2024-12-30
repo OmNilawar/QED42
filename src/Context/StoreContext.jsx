@@ -65,6 +65,7 @@ const StoreContextProvider = (props) => {
   });
   };
 
+  //to get the total cart amount
   const getTotalCartAmount = () => {
     let total = 0;
     for(const item in cartItems)
@@ -81,6 +82,7 @@ const StoreContextProvider = (props) => {
     return total;
   }
 
+  //to calculate the delivery fee
   const getDeliveryFee = () => {
     let amount = getTotalCartAmount();
     if(amount === 0)
@@ -91,6 +93,7 @@ const StoreContextProvider = (props) => {
         return 2;
   }
 
+  //to get the length of cartItem object
   const getCartItemCount = () => {
     return Object.values(cartItems).length;
   };

@@ -87,7 +87,6 @@ export const PraticularItem = () => {
 
             {/* cart functionality */}
             <div className="mt-6 flex justify-between gap-2">
-              {/* Add to Cart button */}
               {!cartCount ? (
                 <button
                   className="w-[50%] px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
@@ -200,7 +199,7 @@ export const PraticularItem = () => {
               </button>
             )}
 
-            {/* Show all reviews when the button is clicked */}
+            
             {showAllReviews && product.reviews.slice(1).map((review, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
                 <div className="flex justify-between items-center mb-4">
