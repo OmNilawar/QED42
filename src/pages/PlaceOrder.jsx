@@ -29,7 +29,6 @@ const PlaceOrder = () => {
   const confirmOrder = (e) => {
     e.preventDefault();
 
-    // Validation (basic example)
     if (!deliveryDetails.firstName || !deliveryDetails.email || !deliveryDetails.phone) {
       alert('Please fill out all required fields!');
       return;

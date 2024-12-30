@@ -8,6 +8,15 @@ const CartItem = () => {
   const { products, cartItems, addToCart, removeFromCart, getTotalCartAmount, getDeliveryFee } = useContext(StoreContext);
   const delivery = getDeliveryFee();
   const navigate = useNavigate();
+
+  const checkOutHandler = () => {
+      if(Object.keys(cartItems).length > 0)
+        navigate('/placeOrder')
+      else{
+        navigate('/');
+        alert('please add products in cart');
+      }
+  }
   
   return (
     <div className="cart mt-12 mx-4 lg:mx-16">
@@ -53,7 +62,7 @@ const CartItem = () => {
         }
       })}
 
-      <div className="cart-bottom mt-8 flex flex-col lg:flex-row justify-between gap-8">
+      <div className="cart-bottom mt-16 flex flex-col lg:flex-row justify-between gap-8">
         <div className="cart-total flex flex-col gap-5 flex-1">
           <h2 className="text-xl font-bold text-gray-800">Cart Total</h2>
           <div className="cart-total-details flex justify-between items-center">
@@ -74,12 +83,6 @@ const CartItem = () => {
               {delivery === "free delivery" ? getTotalCartAmount().toFixed(2) : (getTotalCartAmount() + delivery).toFixed(2)}
             </p>
           </div>
-          <button
-            onClick={() => navigate('/order')}
-            className="mt-6 bg-tomato-500 text-white py-2 rounded-lg w-full sm:w-1/3 hover:bg-tomato-600"
-          >
-            Proceed to Checkout
-          </button>
         </div>
 
         <div className="flex-1">
@@ -99,7 +102,7 @@ const CartItem = () => {
         
       </div>
 
-      <button className='p-4 bg-gray-400 rounded-xl text-l font-semibold' onClick={() => navigate('/placeOrder')}>CheckOut</button>
+      <button className='p-4 mt-8 bg-gray-400 rounded-xl text-l font-semibold' onClick={checkOutHandler}>CheckOut</button>
     </div>
   );
 };
